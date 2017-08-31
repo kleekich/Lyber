@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         btCompare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                int i = 0;
             }
         });
 
