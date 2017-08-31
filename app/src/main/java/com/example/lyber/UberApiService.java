@@ -2,6 +2,8 @@ package com.example.lyber;
 
 
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 
@@ -19,6 +21,37 @@ public class UberApiService {
         uberApi = retrofitClient.create(UberApi.class);
     }
 
+    public void getUber(final ResponseHandler<UberModel> callBack,
+                        boolean isCancelable){
+        Call<UberModel> call = uberApi.getEstimatePrice();
+        if(isCancelable){
+            //if data is present return;
+            if(mCall != null){
+                return;
+            } else{
+                mCall = call;
+            }
+        }
+
+        call.enqueue(new Callback<UberModel>() {
+            @Override
+            public void onResponse(Call<UberModel> call, Response<UberModel> response) {
+                mCall = null;
+                if( response.isSuccessful()){
+                    callBack.onSuccess(response.body());
+                }else{
+                    callBack.onError(response.code(), response.errorBody().toString());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UberModel> call, Throwable t) {
+                mCall= null;
+                callBack.onError(-1, t.getMessage());
+
+            }
+        });
+    }
 
 
 
