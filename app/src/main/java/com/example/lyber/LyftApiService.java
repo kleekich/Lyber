@@ -56,7 +56,7 @@ public class LyftApiService {
         @Headers({"Content-Type: application/json",
                 "Authorization: Bearer VCz8t0iW4Xq60kzG2bk9A70irK+bJMQxpVwoEvMrsWtpR0z3GfIoD5Yxw0ih39AQSkRiiYbnyj7yQFXTqsGxsLf3nhHIw3KzTZrIS31iZ+CvFovYwicNmFo="
         })
-        @GET("eta?lat=37.7833&lng=-122.4167")
+        @GET("cost?start_lat=37.7763&start_lng=-122.3918&end_lat=37.7972&end_lng=-122.4533")
         Call<LyftModel> getEstimatePrice();
 
     }

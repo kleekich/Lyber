@@ -35,10 +35,13 @@ public class MainActivity extends AppCompatActivity {
         btCompare.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RetrofitClient retrofitClient = new RetrofitClient();
-                uberApiService = new UberApiService(retrofitClient);
+                RetrofitClient retrofitClientUber = new RetrofitClient(true);
+
+                uberApiService = new UberApiService(retrofitClientUber);
                 uberApiService.getUber(responseHandler,true);
-                lyftApiService = new LyftApiService(retrofitClient);
+
+                RetrofitClient retrofitClientLyft = new RetrofitClient(false);
+                lyftApiService = new LyftApiService(retrofitClientLyft);
                 lyftApiService.getLyft(responseHandler, true);
             }
         });
