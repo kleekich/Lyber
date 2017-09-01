@@ -13,12 +13,12 @@ import retrofit2.http.Headers;
 
 public class UberApiService {
 
-    private UberApi uberApi;
+    private UberService uberApi;
 
     private Call<UberModel> mCall;
 
     public UberApiService(RetrofitClient retrofitClient){
-        uberApi = retrofitClient.create(UberApi.class);
+        uberApi = retrofitClient.create(UberService.class);
     }
 
     public void getUber(final ResponseHandler<UberModel> callBack,
@@ -55,7 +55,7 @@ public class UberApiService {
 
 
 
-    public interface UberApi {
+    public interface UberService {
         @Headers({"Authorization: Token HjZxMp8RqM_19XHna7ncAVehIhP28L3PiY0jxw_Z",
                 "Accept-Language: en_US",
                 "Content-Type: application/json"
