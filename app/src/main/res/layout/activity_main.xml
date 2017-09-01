@@ -18,7 +18,7 @@
         android:id="@+id/tvUberFare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="UberFare"
+        android:text="@string/uber_fare"
         tools:layout_editor_absoluteX="164dp"
         tools:layout_editor_absoluteY="283dp" />
 

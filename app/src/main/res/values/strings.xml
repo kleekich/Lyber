@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Lyber</string>
+    <string name="uber_fare">UberFare</string>
 </resources>

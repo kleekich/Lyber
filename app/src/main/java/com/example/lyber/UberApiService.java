@@ -56,7 +56,7 @@ public class UberApiService {
 
 
     public interface UberApi {
-        @Headers({"Authorization: Bearer HjZxMp8RqM_19XHna7ncAVehIhP28L3PiY0jxw_Z",
+        @Headers({"Authorization: Token HjZxMp8RqM_19XHna7ncAVehIhP28L3PiY0jxw_Z",
                 "Accept-Language: en_US",
                 "Content-Type: application/json"
         })
