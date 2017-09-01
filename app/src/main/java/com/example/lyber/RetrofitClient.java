@@ -17,8 +17,8 @@ public class RetrofitClient {
 
     private final Retrofit mRetrofit;
 
-    public RetrofitClient(boolean isUberClient){
-        BASE_URL = isUberClient ?  BASE_URL_UBER : BASE_URL_LYFT;
+    public RetrofitClient(String companyName){
+        BASE_URL = companyName == "UBER" ?  BASE_URL_UBER : BASE_URL_LYFT;
         Retrofit.Builder builder = new Retrofit.Builder().baseUrl(BASE_URL)
                 .addConverterFactory(MoshiConverterFactory.create());
 
