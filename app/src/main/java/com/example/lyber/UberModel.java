@@ -15,4 +15,5 @@ public class UberModel {
     public UberModel(List<UberPriceItem> uberPrices) {
         this.uberPrices = uberPrices;
     }
+
 }
