@@ -11,12 +11,14 @@ import retrofit2.converter.moshi.MoshiConverterFactory;
 
 public class RetrofitClient {
 
-    private static final String BASE_URL = "https://api.uber.com/v1.2/";
+    private static final String BASE_URL_UBER = "https://api.uber.com/v1.2/";
+    private static final String BASE_URL_LYFT = "https://api.lyft.com/v1/";
+    private static String BASE_URL;
 
     private final Retrofit mRetrofit;
 
-    public RetrofitClient(){
-
+    public RetrofitClient(boolean isUberClient){
+        BASE_URL = isUberClient ?  BASE_URL_UBER : BASE_URL_LYFT;
         Retrofit.Builder builder = new Retrofit.Builder().baseUrl(BASE_URL)
                 .addConverterFactory(MoshiConverterFactory.create());
 

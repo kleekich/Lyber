@@ -10,6 +10,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btCompare;
     UberApiService uberApiService;
+    LyftApiService lyftApiService;
 
     ResponseHandler responseHandler;
 
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btCompare = (Button) findViewById(R.id.buttonCompaer);
+        btCompare = (Button) findViewById(R.id.btCompare);
         responseHandler = new ResponseHandler() {
             @Override
             public void onSuccess(Object response) {
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 RetrofitClient retrofitClient = new RetrofitClient();
                 uberApiService = new UberApiService(retrofitClient);
                 uberApiService.getUber(responseHandler,true);
+                lyftApiService = new LyftApiService(retrofitClient);
+                lyftApiService.getLyft(responseHandler, true);
             }
         });
 
