@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/spUber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="187dp" />
+
+    <TextView
+        android:id="@+id/tvUberPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_below="@+id/spUber"
+        android:layout_alignLeft="@+id/tvUberDuration"
+        android:layout_alignStart="@+id/tvUberDuration"
+        android:layout_marginTop="53dp" />
+
+    <TextView
+        android:id="@+id/tvUberDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvUberPrice"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:text="TextView" />
+</RelativeLayout>
